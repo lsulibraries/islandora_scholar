@@ -78,6 +78,7 @@ function islandora_scholar_get_view(AbstractObject $object) {
   if (isset($object['PREVIEW']) && islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $object['PREVIEW'])) {
     $image = theme('image', array(
       'path' => "islandora/object/$object->id/datastream/PREVIEW/view",
+      'attributes' => array('class'=>array('pdf-preview'))
     ));
     if (isset($object['PDF']) && islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $object['PDF'])) {
       $display['preview'] = array(
